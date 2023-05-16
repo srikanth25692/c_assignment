@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+void call(char name[][10],int *marks,int count)
+{
+    for(int i=0;i<count;i++)
+    {
+        printf("%s\t%d\t",name[i],*(marks+i));
+    }
+}
+int main()
+{
+    int subjects=0;
+    printf("enter number of subjects\n");
+    scanf("%d",&subjects);
+    int (*marks)[subjects]=malloc(subjects*sizeof(int));
+    char (*name)[subjects][10]=malloc(subjects*10*sizeof(char));
+    for(int i=0;i<subjects;i++)
+    {
+        scanf("%s %d",*(*name+i),(*marks+i));
+    }
+    call(*name,*marks,subjects);
+    return 0;
+}
