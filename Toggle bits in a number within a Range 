@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main()
+{
+   int a=0xffffffff,r=5,l=9;
+   for(int i=31;i>0;i--)
+   {
+       if((l>=i)&&(r<=i))
+       {
+           a=a^(1<<i);
+       }
+   }
+   printf("%0b",a);
+    return 0;
+}
