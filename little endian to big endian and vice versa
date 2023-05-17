@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    int a=0x12345678;//little endian to big endian
+    for(int i=0;i<4;i++)
+    {
+        printf("%x\t",(a&((0xff)<<(8*i)))/((int)pow(2,(8*i))));
+    }
+    printf("\n");
+    int b=0x12345678;//big endian to little endian
+    for(int i=3;i>=0;i--)
+    {
+        printf("%x\t",(b&((0xff)<<(8*i)))/((int)pow(2,(8*i))));
+    }
+    printf("\n");
+    return 0;
+}
