@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main()
+{
+    int a=10;
+    a=a|(1<<17);//set bit pos 17
+    printf("%d\n",a);
+    a=a&~(1<<17);//unset bit pos 17
+    printf("%d\n",a);
+    return 0;
+}
