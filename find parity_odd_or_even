@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main()
+{
+   int a=11;
+   if(a&1)
+   printf("odd parity");
+   else
+   printf("even parity");
+    return 0;
+}
