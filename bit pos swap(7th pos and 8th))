@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main()
+{
+   int a=0x0000ff01,temp1=0,temp2=0;
+   if(a&(1<<7))
+       temp1=1;
+   else
+       temp1=0;
+   if(a&(1<<8))
+       temp2=1;
+   else
+       temp2=0;
+   if(temp1)
+   a=a|(1<<8);
+   else
+   a=a&(~(1<<8));
+   if(temp2)
+   a=a|(1<<7);
+   else
+   a=a&(~(1<<7));
+   printf("%0b",a);
+    return 0;
+}
