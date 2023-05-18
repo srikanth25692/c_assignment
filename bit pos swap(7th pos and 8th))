@@ -1,23 +1,23 @@
 #include <stdio.h>
 int main()
 {
-   int a=0x0000ff01,temp1=0,temp2=0;
-   if(a&(1<<7))
+   int a=0b10101101,temp1=0,temp2=0,pos1=1,pos2=2;
+   if(a&(1<<pos1))
        temp1=1;
    else
        temp1=0;
-   if(a&(1<<8))
+   if(a&(1<<pos2))
        temp2=1;
    else
        temp2=0;
    if(temp1)
-   a=a|(1<<8);
+   a=a|(1<<pos2);
    else
-   a=a&(~(1<<8));
+   a=a&(~(1<<pos2));
    if(temp2)
-   a=a|(1<<7);
+   a=a|(1<<pos1);
    else
-   a=a&(~(1<<7));
-   printf("%0b",a);
+   a=a&(~(1<<pos1));
+   printf("%b",a);
     return 0;
 }
